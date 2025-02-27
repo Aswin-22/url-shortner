@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Admin</h1>
+    <div>
+      <% if (locals.urls) { %>
+      <table>
+        <thead>
+          <th>S.no</th>
+          <th>User_name</th>
+          <th>Short Id</th>
+          <th>redirectLink</th>
+          <th>visit Frequency</th>
+        </thead>
+        <tbody>
+          <% locals.urls.forEach((url, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= url.createdBy.name%></td>
+            <td><%= url.shortId %></td>
+            <td><%= url.redirectLink %></td>
+            <td><%= url.visitHistory.length %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <% } %>
+    </div>
+  </body>
+</html>
